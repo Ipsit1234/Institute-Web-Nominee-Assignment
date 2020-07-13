@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Checkout example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="static/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="static/form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="https://cdn.iconscout.com/icon/free/png-256/coronavirus-493580.png" alt="" width="72" height="72">
+    <h2>Student Wellness form</h2>
+{#    <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>#}
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h4 class="mb-3">Personal Details</h4>
+      <form class="needs-validation" novalidate method="post" action="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{ request.form.name }}" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="rollNum">Roll No</label>
+            <input type="text" class="form-control" id="rollNum" name="rollNum" placeholder="" value="{{ request.form.rollNum }}" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+{#        <div class="mb-3">#}
+{#          <label for="username">Username</label>#}
+{#          <div class="input-group">#}
+{#            <div class="input-group-prepend">#}
+{#              <span class="input-group-text">@</span>#}
+{#            </div>#}
+{#            <input type="text" class="form-control" id="username" placeholder="Username" required>#}
+{#            <div class="invalid-feedback" style="width: 100%;">#}
+{#              Your username is required.#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+          <div class="invalid-feedback">
+            Valid email address is required.
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstNum">Mobile Number</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">+91</span>
+                </div>
+            <input type="text" class="form-control" id="firstNum" name="firstNum" placeholder="" value="{{ request.form.firstNum }}" required>
+            <div class="invalid-feedback">
+              Valid mobile number is required.
+            </div>
+              </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="altNum">Alternate Number</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">+91</span>
+                </div>
+                <input type="text" class="form-control" id="altNum" name="altNum" placeholder="" value="{{ request.form.altNum }}" required>
+            <div class="invalid-feedback">
+              Valid mobile number is required.
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Please enter your address.
+          </div>
+        </div>
+
+{#        <div class="mb-3">#}
+{#          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>#}
+{#          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">#}
+{#        </div>#}
+
+          <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="city">Hometown</label>
+              <div class="input-group">
+            <input type="text" class="form-control" id="homeTown" name="homeTown" placeholder="Leh" value="{{ request.form.homeTown }}" required>
+            <div class="invalid-feedback">
+              Homwtown is required.
+            </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">State / UT</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="state" name="state" placeholder="Ladakh" value="{{ request.form.state }}" required>
+            <div class="invalid-feedback">
+              State is required.
+            </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="pinCode">Postal Code</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="pinCode" name="pinCode" placeholder="194101" value="{{ request.form.pinCode }}" required>
+            <div class="invalid-feedback">
+              Pincode is required.
+            </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+           <h4 class="mb-3">Symptoms</h4>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="s1" name="s1">
+          <label class="custom-control-label" for="s1">I have slight fever</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="s2" name="s2">
+          <label class="custom-control-label" for="s2">I am facing difficulty in breathing</label>
+        </div>
+        <hr class="mb-4">
+        <div class="container p-3 my-3">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit and Logout</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+{#      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>#}
+        <script src="static/form-validation.js"></script></body>
+</html>

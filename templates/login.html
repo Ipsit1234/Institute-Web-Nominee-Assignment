@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <title>Student Portal</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="static/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="post" action="">
+      <img class="mb-4" src="https://cdn.iconscout.com/icon/free/png-256/coronavirus-493580.png"  alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+      <label for="ldap" class="sr-only">Email address</label>
+      <input type="text" id="ldap" class="form-control" placeholder="LDAP ID" name="ldap" required autofocus value="{{ request.form.ldap }}">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" name="password" required value="{{ request.form.passowrd }}">
+{#      <div class="checkbox mb-3">#}
+{#        <label>#}
+{#          <input type="checkbox" value="remember-me"> Remember me#}
+{#        </label>#}
+{#      </div>#}
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Log in</button>
+{#      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>#}
+    </form>
+    {% if error %}
+        <script>
+        window.alert(`{{ error }}`);
+        </script>
+    {% endif %}
+  </body>
+</html>
