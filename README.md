@@ -41,9 +41,9 @@ If the user checks any symptoms, an email will be sent to the concerned authorit
 ## Demo Video
 Here, I set my email ID as the target email id if any user reports symptoms.  
 <!-- blank line -->
-<figure class="video_container">
+
   <iframe src="https://youtu.be/DUmj8yPjxSM" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+
 <!-- blank line --
 
 
