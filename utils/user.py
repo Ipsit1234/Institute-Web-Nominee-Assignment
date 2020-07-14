@@ -1,8 +1,10 @@
 import pandas as pd
+import datetime
 
 class User:
     def __init__(self, data):
         self.data = {key: data[key] for key in data.keys() if key != 'ldap' or key != 'password'}
+        self.data['date'] = datetime.datetime.now().date()
         try:
             if self.data['s1'] == 'on':
                 self.data['s1'] = "True"

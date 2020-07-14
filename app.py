@@ -12,8 +12,8 @@ app.config.update({
     'MAIL_PORT': 465,
     'MAIL_USE_SSL': True,
     'MAIL_USE_TLS': False,
-    'MAIL_USERNAME': 'ipsit.iitb@gmail.com',
-    'MAIL_PASSWORD': 'ipsitmantri2000'
+    'MAIL_USERNAME': '<yourEmailAddredd>', # replace with your gmail id
+    'MAIL_PASSWORD': '<yourEmailPassowrd>' # replace with your password here
 })
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -64,7 +64,7 @@ def sendMail():
             s.append(x)
     msg = Message(
         sender='ipsit.iitb@gmail.com',
-        recipients=['mmkipsit@gmail.com']
+        recipients=['<dummy.recipient@gmail.com>'] # replace with the recipient's email id
     )
     msg.subject = "{} Health Update".format(rollNo)
     msg.body = "{} has the following symptoms: \n".format(name)
