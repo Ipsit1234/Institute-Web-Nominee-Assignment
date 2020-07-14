@@ -39,8 +39,12 @@ in the `userData.csv` file.
 If the user checks any symptoms, an email will be sent to the concerned authorities.
 
 ## Demo Video
-Here, I set my email ID as the target email id if any user reports symptoms.
-[![Demo](http://img.youtube.com/vi/DUmj8yPjxSM/0.jpg)](http://www.youtube.com/watch?v=DUmj8yPjxSM "Demo")
+Here, I set my email ID as the target email id if any user reports symptoms.  
+<!-- blank line -->
+<figure class="video_container">
+  <iframe src="https://youtu.be/DUmj8yPjxSM" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+<!-- blank line --
 
 
  
