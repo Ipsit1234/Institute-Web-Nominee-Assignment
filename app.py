@@ -2,12 +2,12 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_mail import Mail, Message
 from utils.user import User
 import pandas as pd
-from datetime import date
 import datetime
+from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
 app.config.update({
-    "DEBUG": True,
+    "DEBUG": False,
     'MAIL_SERVER': 'smtp.gmail.com',
     'MAIL_PORT': 465,
     'MAIL_USE_SSL': True,
@@ -15,9 +15,9 @@ app.config.update({
     'MAIL_USERNAME': 'ipsit.iitb@gmail.com',
     'MAIL_PASSWORD': 'ipsitmantri2000'
 })
+
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 mail = Mail(app)
-
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -26,12 +26,11 @@ def login():
         users = pd.read_csv('users.csv', index_col=None, parse_dates=True)
         if str(request.form['ldap']) in users['Roll No'].values:
             idx = list(users['Roll No'].values).index(str(request.form['ldap']))
-            if request.form['password'] == users['Password'].values[idx]:
-                if (date.today() - datetime.datetime.strptime(users['Time Stamp'].values[idx],
-                                                              '%Y-%m-%d').date()).days == 0:
+            if sha256_crypt.verify(request.form['password'], users['Password'].values[idx]):
+                if (datetime.datetime.now().date() - datetime.datetime.strptime(users['Time Stamp'].values[idx], "%Y-%m-%d %H:%M:%S.%f").date()).days == 0:
                     error = 'You cannot log in today, come back tomorrow'
                 else:
-                    users['Time Stamp'].values[idx] = date.today()
+                    users['Time Stamp'].values[idx] = str(datetime.datetime.now())
                     users.to_csv('users.csv', index=False)
                     return redirect(url_for('health'))
             else:
@@ -75,4 +74,4 @@ def sendMail():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

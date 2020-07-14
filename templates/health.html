@@ -72,19 +72,6 @@
           </div>
         </div>
 
-{#        <div class="mb-3">#}
-{#          <label for="username">Username</label>#}
-{#          <div class="input-group">#}
-{#            <div class="input-group-prepend">#}
-{#              <span class="input-group-text">@</span>#}
-{#            </div>#}
-{#            <input type="text" class="form-control" id="username" placeholder="Username" required>#}
-{#            <div class="invalid-feedback" style="width: 100%;">#}
-{#              Your username is required.#}
-{#            </div>#}
-{#          </div>#}
-{#        </div>#}
-
         <div class="mb-3">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
@@ -101,7 +88,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">+91</span>
                 </div>
-            <input type="text" class="form-control" id="firstNum" name="firstNum" placeholder="" value="{{ request.form.firstNum }}" required>
+            <input type="number" class="form-control" id="firstNum" name="firstNum" placeholder="" value="{{ request.form.firstNum }}" required minlength="10" maxlength="10" pattern="\d">
             <div class="invalid-feedback">
               Valid mobile number is required.
             </div>
@@ -113,7 +100,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">+91</span>
                 </div>
-                <input type="text" class="form-control" id="altNum" name="altNum" placeholder="" value="{{ request.form.altNum }}" required>
+                <input type="number" class="form-control" id="altNum" name="altNum" placeholder="" value="{{ request.form.altNum }}" required minlength="10" maxlength="10" pattern="\d">
             <div class="invalid-feedback">
               Valid mobile number is required.
             </div>
@@ -128,11 +115,6 @@
             Please enter your address.
           </div>
         </div>
-
-{#        <div class="mb-3">#}
-{#          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>#}
-{#          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">#}
-{#        </div>#}
 
           <div class="row">
           <div class="col-md-4 mb-3">
@@ -156,7 +138,7 @@
           <div class="col-md-4 mb-3">
             <label for="pinCode">Postal Code</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="pinCode" name="pinCode" placeholder="194101" value="{{ request.form.pinCode }}" required>
+                <input type="number" class="form-control" id="pinCode" name="pinCode" placeholder="194101" value="{{ request.form.pinCode }}" required minlength="6" maxlength="6" pattern="\d">
             <div class="invalid-feedback">
               Pincode is required.
             </div>
@@ -182,6 +164,6 @@
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-{#      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>#}
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
         <script src="static/form-validation.js"></script></body>
 </html>

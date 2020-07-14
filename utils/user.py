@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 class User:
     def __init__(self, data):
         self.data = {key: data[key] for key in data.keys() if key != 'ldap' or key != 'password'}
